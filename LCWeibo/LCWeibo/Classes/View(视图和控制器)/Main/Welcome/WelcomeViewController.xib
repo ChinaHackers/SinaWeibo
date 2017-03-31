@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="LCWeibo" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="ToY-Qx-5Xb">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="8zD-fj-RNU">
+                    <rect key="frame" x="142" y="427" width="90" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="9aM-bo-nhV"/>
+                        <constraint firstAttribute="height" constant="90" id="LT2-o2-GRI"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="45"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回来" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Q2-BV-MOc">
+                    <rect key="frame" x="156" y="537" width="62" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5Q2-BV-MOc" firstAttribute="top" secondItem="8zD-fj-RNU" secondAttribute="bottom" constant="20" id="8VG-sc-JF2"/>
+                <constraint firstItem="ToY-Qx-5Xb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8kl-X0-zTt"/>
+                <constraint firstItem="5Q2-BV-MOc" firstAttribute="centerX" secondItem="8zD-fj-RNU" secondAttribute="centerX" id="Dvg-Bd-Flo"/>
+                <constraint firstAttribute="bottom" secondItem="8zD-fj-RNU" secondAttribute="bottom" constant="150" id="Nry-H4-sVg"/>
+                <constraint firstItem="ToY-Qx-5Xb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="d0X-KX-6No"/>
+                <constraint firstAttribute="bottom" secondItem="ToY-Qx-5Xb" secondAttribute="bottom" id="fbf-b7-aRH"/>
+                <constraint firstItem="8zD-fj-RNU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="szT-k5-0gr"/>
+                <constraint firstAttribute="trailing" secondItem="ToY-Qx-5Xb" secondAttribute="trailing" id="zEN-xi-cVa"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ad_background" width="375" height="667"/>
+        <image name="avatar_default" width="50" height="50"/>
+    </resources>
+</document>

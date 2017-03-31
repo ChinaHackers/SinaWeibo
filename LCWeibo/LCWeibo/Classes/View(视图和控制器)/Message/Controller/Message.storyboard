@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TW4-TY-FMd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--消息-->
+        <scene sceneID="tzs-Jk-M5m">
+            <objects>
+                <tableViewController id="CBX-Ok-AmN" customClass="MessageTableViewController" customModule="LCWeibo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SsL-JU-hoa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="CBX-Ok-AmN" id="Mle-oE-WTu"/>
+                            <outlet property="delegate" destination="CBX-Ok-AmN" id="ESm-3x-rYg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="消息" id="eTO-AL-kCb"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hng-dg-9W4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905" y="-241"/>
+        </scene>
+        <!--消息-->
+        <scene sceneID="MRS-TC-uY2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TW4-TY-FMd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="消息" image="tabbar_message_center" selectedImage="tabbar_message_center_selected" id="dJ5-xH-MXK"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lwH-Op-oSm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CBX-Ok-AmN" kind="relationship" relationship="rootViewController" id="Wil-8H-1yW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SJK-AR-qpn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13.6" y="-240.62968515742131"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabbar_message_center" width="30" height="30"/>
+        <image name="tabbar_message_center_selected" width="30" height="30"/>
+    </resources>
+</document>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-LCWeibo.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SnapKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>pop.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>7E61C09E88AD04DABF1EF841BD4A734B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8DCA908142D7B2B8ECA0FA3BDCCDD2CB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BD01059F0E180408C8E9E66472373D3A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C4944FEC314D1A66588651D006273ADE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

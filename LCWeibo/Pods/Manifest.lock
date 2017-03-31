@@ -1,0 +1,35 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - Kingfisher (3.6.0)
+  - pop (1.0.9)
+  - SnapKit (3.2.0)
+
+DEPENDENCIES:
+  - AFNetworking
+  - Kingfisher
+  - pop
+  - SnapKit
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Kingfisher: 300035f9a40634dc9b452d946c9f22250688fecd
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+
+PODFILE CHECKSUM: 8a8829ab52acaed1efef98f093363468b2dba825
+
+COCOAPODS: 1.2.0

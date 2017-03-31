@@ -1,0 +1,6 @@
+framework module Pods_LCWeibo {
+  umbrella header "Pods-LCWeibo-umbrella.h"
+
+  export *
+  module * { export * }
+}

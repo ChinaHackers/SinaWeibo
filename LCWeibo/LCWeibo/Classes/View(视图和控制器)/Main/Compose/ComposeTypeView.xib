@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="chn-ga-iNg" customClass="ComposeTypeView" customModule="LCWeibo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VuO-8T-O2z">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MgH-Sa-GlF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="compose_slogan" translatesAutoresizingMaskIntoConstraints="NO" id="j4W-AC-5VA">
+                                <rect key="frame" x="111" y="100" width="154" height="48"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHl-jw-XRI">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ii-Pb-DfO">
+                                        <rect key="frame" x="176" y="11" width="22" height="22"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="tabbar_compose_icon_cancel"/>
+                                        <connections>
+                                            <action selector="close" destination="chn-ga-iNg" eventType="touchUpInside" id="liS-MI-W4x"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="0Ii-Pb-DfO" firstAttribute="centerX" secondItem="HHl-jw-XRI" secondAttribute="centerX" id="2BZ-A9-F6E"/>
+                                    <constraint firstItem="0Ii-Pb-DfO" firstAttribute="centerY" secondItem="HHl-jw-XRI" secondAttribute="centerY" id="i0b-G6-h2J"/>
+                                    <constraint firstAttribute="height" constant="44" id="v9F-To-eoT"/>
+                                </constraints>
+                            </view>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsp-VT-rv4">
+                                <rect key="frame" x="0.0" y="299" width="375" height="224"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="Fza-TF-lv9"/>
+                                </constraints>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="mAe-ch-1tO">
+                                <rect key="frame" x="168" y="578" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0r3-ho-KMw">
+                                <rect key="frame" x="0.0" y="622" width="375" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mAe-ch-1tO" secondAttribute="trailing" constant="168" id="1EW-HM-pz2"/>
+                            <constraint firstItem="Dsp-VT-rv4" firstAttribute="leading" secondItem="MgH-Sa-GlF" secondAttribute="leading" id="2fM-HA-f3Y"/>
+                            <constraint firstItem="HHl-jw-XRI" firstAttribute="leading" secondItem="MgH-Sa-GlF" secondAttribute="leading" id="7Da-GS-9Uj"/>
+                            <constraint firstAttribute="trailing" secondItem="HHl-jw-XRI" secondAttribute="trailing" id="EJw-Vo-Uqe"/>
+                            <constraint firstItem="j4W-AC-5VA" firstAttribute="top" secondItem="MgH-Sa-GlF" secondAttribute="top" constant="100" id="FkO-G9-YqP"/>
+                            <constraint firstItem="j4W-AC-5VA" firstAttribute="centerX" secondItem="MgH-Sa-GlF" secondAttribute="centerX" id="OF7-Yd-2wz"/>
+                            <constraint firstAttribute="trailing" secondItem="Dsp-VT-rv4" secondAttribute="trailing" id="To0-We-Lgj"/>
+                            <constraint firstItem="HHl-jw-XRI" firstAttribute="top" secondItem="mAe-ch-1tO" secondAttribute="bottom" constant="8" id="edB-2V-Mpd"/>
+                            <constraint firstItem="mAe-ch-1tO" firstAttribute="leading" secondItem="MgH-Sa-GlF" secondAttribute="leading" constant="168" id="mab-Up-amy"/>
+                            <constraint firstItem="HHl-jw-XRI" firstAttribute="top" secondItem="Dsp-VT-rv4" secondAttribute="bottom" constant="100" id="pBp-yR-7TO"/>
+                            <constraint firstAttribute="bottom" secondItem="HHl-jw-XRI" secondAttribute="bottom" id="sbf-T4-urX"/>
+                            <constraint firstItem="mAe-ch-1tO" firstAttribute="centerX" secondItem="MgH-Sa-GlF" secondAttribute="centerX" id="seB-Uc-Uxt"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="extraLight"/>
+                </visualEffectView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="VuO-8T-O2z" secondAttribute="bottom" id="cMW-Yo-BiC"/>
+                <constraint firstItem="VuO-8T-O2z" firstAttribute="leading" secondItem="chn-ga-iNg" secondAttribute="leading" id="eU3-eP-UPJ"/>
+                <constraint firstAttribute="trailing" secondItem="VuO-8T-O2z" secondAttribute="trailing" id="hWn-JN-8eF"/>
+                <constraint firstItem="VuO-8T-O2z" firstAttribute="top" secondItem="chn-ga-iNg" secondAttribute="top" id="yaS-Yv-Haz"/>
+            </constraints>
+            <connections>
+                <outlet property="closeBtn" destination="0Ii-Pb-DfO" id="qbS-q4-fLG"/>
+                <outlet property="pageControl" destination="mAe-ch-1tO" id="Qqu-GX-TSy"/>
+                <outlet property="scrollView" destination="Dsp-VT-rv4" id="qnc-04-zhj"/>
+            </connections>
+            <point key="canvasLocation" x="-49.5" y="-83.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="compose_slogan" width="154" height="48"/>
+        <image name="tabbar_compose_icon_cancel" width="22" height="22"/>
+    </resources>
+</document>
