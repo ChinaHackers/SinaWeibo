@@ -8,6 +8,7 @@ use_frameworks!
 pod 'SnapKit'
 pod 'Kingfisher'
 pod 'AFNetworking'
+pod 'YYModel'
 pod 'pop'
 
 end

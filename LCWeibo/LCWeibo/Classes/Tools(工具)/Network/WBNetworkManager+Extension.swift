@@ -23,9 +23,9 @@ extension WBNetworkManager {
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         
         /// 参数
-        let params = ["access_token": "2.00EJsY7GYwvbnBd88e302956Vt8b7E"]
+//        let params = ["access_token": "2.00EJsY7GYwvbnBd88e302956Vt8b7E"]
         
-        request(URLString: urlString, parameters: params) { (json, isSuccess) in
+        ToKenRequest(URLString: urlString, parameters: nil) { (json, isSuccess) in
             
 //            print(json ?? "")
             

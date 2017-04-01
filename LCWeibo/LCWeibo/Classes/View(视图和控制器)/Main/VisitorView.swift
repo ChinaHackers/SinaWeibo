@@ -88,7 +88,7 @@ class VisitorView: UIView {
      
      - parameter isHome:    是否是首页
      - parameter imageName: 相应图片
-     - parameter text:      相应文字
+     - parameter message:   相应文字
      */
     func setupVisitorView(isHome: Bool, imageName: String, message: String) {
         
@@ -134,7 +134,7 @@ extension VisitorView {
         
         attention_Btn = attentionBtn
         
-        // MARK: 添加控件
+        //  添加控件
         addSubview(iconView)
         addSubview(maskIconView)
         addSubview(houseIconView)
@@ -167,8 +167,6 @@ extension VisitorView {
         
         // 旋转视图
         iconView.snp.makeConstraints { (make) in
-            
-            // 旋转视图的中心X轴, 等于父视图的中心X轴
             make.centerX.equalToSuperview()
             
             // 旋转视图的中心Y轴, 等于父视图的中心Y轴, 往上偏移100
@@ -177,29 +175,19 @@ extension VisitorView {
         
         // 遮罩蒙版视图
         maskIconView.snp.makeConstraints { (make) in
-            
-            // 遮罩视图X轴中心点\底部
             make.centerX.equalTo(iconView)
             make.bottom.equalTo(iconView)
         }
         
         // 小房子图片
         houseIconView.snp.makeConstraints { (make) in
-            
-            // 小房子图片中心点等于 iconView的中心点
             make.center.equalTo(iconView)
-            
         }
         
         // 消息文字
         messageLabel.snp.makeConstraints { (make) in
-            
-            // 消息文字居中
             make.centerX.equalToSuperview()
-            
-            // 当前视图的顶部 = iconView的底部
             make.top.equalTo(iconView.snp.bottom)
-            // 标签的宽度
             make.width.equalTo(200)
             
         }
@@ -207,7 +195,6 @@ extension VisitorView {
         
         // 关注按钮
         attentionBtn.snp.makeConstraints { (make) in
-            
             make.centerX.equalToSuperview()
             make.top.equalTo(messageLabel.snp.bottom).offset(32.0)
             make.width.equalTo(120.0)
@@ -272,9 +259,9 @@ extension VisitorView {
 // MARK: - 提供一个通过 Xib 快速创建的类方法
 extension VisitorView {
     
-        class func load_VisitorView() -> VisitorView {
-             return Bundle.main.loadNibNamed("VisitorView", owner: nil, options: nil)?.first as! VisitorView
-        }
+    class func load_VisitorView() -> VisitorView {
+         return Bundle.main.loadNibNamed("VisitorView", owner: nil, options: nil)?.first as! VisitorView
+    }
 
 }
 
