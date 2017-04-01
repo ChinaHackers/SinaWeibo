@@ -41,6 +41,8 @@
 		6B8FF3D41E8EA64B002BDCA1 /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8FF3B11E8EA64B002BDCA1 /* Mine.storyboard */; };
 		6B8FF3D51E8EA64B002BDCA1 /* MineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8FF3B21E8EA64B002BDCA1 /* MineTableViewController.swift */; };
 		6B8FF3D71E8EA70C002BDCA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8FF3D61E8EA70C002BDCA1 /* LaunchScreen.storyboard */; };
+		6BC3AF951E90231500F1CC9E /* WBStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3AF941E90231500F1CC9E /* WBStatusModel.swift */; };
+		6BC3AF971E9025DC00F1CC9E /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3AF961E9025DC00F1CC9E /* WBStatusListViewModel.swift */; };
 		8189193932706B45694CFB54 /* Pods_LCWeibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50366CAAF15ED550727B4E61 /* Pods_LCWeibo.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,8 @@
 		6B8FF3B11E8EA64B002BDCA1 /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
 		6B8FF3B21E8EA64B002BDCA1 /* MineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineTableViewController.swift; sourceTree = "<group>"; };
 		6B8FF3D61E8EA70C002BDCA1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6BC3AF941E90231500F1CC9E /* WBStatusModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusModel.swift; sourceTree = "<group>"; };
+		6BC3AF961E9025DC00F1CC9E /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
 		F1EDF3B89C73F992C4B8DC6B /* Pods-LCWeibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCWeibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCWeibo/Pods-LCWeibo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +144,7 @@
 		6B8FF37D1E8EA64B002BDCA1 /* Model(模型) */ = {
 			isa = PBXGroup;
 			children = (
+				6BC3AF941E90231500F1CC9E /* WBStatusModel.swift */,
 			);
 			path = "Model(模型)";
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 		6B8FF3B51E8EA64B002BDCA1 /* ViewModel(视图模型) */ = {
 			isa = PBXGroup;
 			children = (
+				6BC3AF961E9025DC00F1CC9E /* WBStatusListViewModel.swift */,
 			);
 			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
@@ -520,12 +526,14 @@
 				6B8FF3D51E8EA64B002BDCA1 /* MineTableViewController.swift in Sources */,
 				6B8FF3C41E8EA64B002BDCA1 /* AppDelegate.swift in Sources */,
 				6B8FF3CD1E8EA64B002BDCA1 /* TabBarController.swift in Sources */,
+				6BC3AF971E9025DC00F1CC9E /* WBStatusListViewModel.swift in Sources */,
 				6B8FF3C71E8EA64B002BDCA1 /* ComposeTypeButton.swift in Sources */,
 				6B8FF3B91E8EA64B002BDCA1 /* UIBarButtonItem+Extension.swift in Sources */,
 				6B8FF3CE1E8EA64B002BDCA1 /* VisitorView.swift in Sources */,
 				6B8FF3B61E8EA64B002BDCA1 /* WBNetworkManager+Extension.swift in Sources */,
 				6B8FF3C31E8EA64B002BDCA1 /* PopoverViewController.swift in Sources */,
 				6B8FF3C01E8EA64B002BDCA1 /* QRCodeViewController.swift in Sources */,
+				6BC3AF951E90231500F1CC9E /* WBStatusModel.swift in Sources */,
 				6B8FF3B81E8EA64B002BDCA1 /* TitleButton.swift in Sources */,
 				6B8FF3D01E8EA64B002BDCA1 /* WelcomeViewController.swift in Sources */,
 				6B8FF3C51E8EA64B002BDCA1 /* BaseTableViewController.swift in Sources */,

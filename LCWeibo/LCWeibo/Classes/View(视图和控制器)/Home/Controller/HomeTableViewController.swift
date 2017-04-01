@@ -13,6 +13,10 @@ class HomeTableViewController: BaseTableViewController {
     // MARK: - 懒加载属性
     fileprivate lazy var titleBtn: TitleButton = TitleButton()
     
+    
+    /// statusModel: 微博数据列表 视图模型对象
+    fileprivate lazy var listViewModel = WBStatusListViewModel()
+    
     // 注意:在闭包中如果使用当前对象的属性或者调用方法,也需要加self
     // 两个地方需要使用self : 1> 如果在一个函数中出现歧义 2> 在闭包中使用当前对象的属性和方法也需要加self
     
@@ -40,11 +44,14 @@ class HomeTableViewController: BaseTableViewController {
 
         loadData()
         
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
     /// 加载数据
     private func loadData() {
-        
+     
+/*
         //MARK: 用网络工具微博加载数据
         WBNetworkManager.shared.loadDataList { (List, isSuccess) in
             
@@ -52,6 +59,17 @@ class HomeTableViewController: BaseTableViewController {
             
             //MARK: 字点转模型, 配置表格数据
         }
+        
+*/
+        self.listViewModel.loadStatus { (isSuccess) in
+            
+            // 刷新表格
+            self.tableView.reloadData()
+            
+        }
+        
+        
+        
         
         
         print("开始加载数据\(WBNetworkManager.shared)")
@@ -63,7 +81,7 @@ class HomeTableViewController: BaseTableViewController {
 // MARK: - 配置UI界面
 extension HomeTableViewController {
     
-    // MARK: 配置导航栏
+    /// 配置导航栏
     fileprivate func configNavigationBar() {
         
         /*
@@ -153,6 +171,42 @@ extension HomeTableViewController {
     }
     
 }
+
+
+// MARK: - 遵守 UITableViewDataSource 协议
+extension HomeTableViewController {
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return listViewModel.statusList.count
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
+        
+//        cell.imageView?.image = UIImage(named: listViewModel.statusList[indexPath.row].bmiddle_pic)
+    
+        return cell
+    }
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
