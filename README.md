@@ -4,8 +4,7 @@
 
 
 ### 效果:
-
-![](https://ww4.sinaimg.cn/large/006tNbRwgy1fe6gst2624g30b00jeu11.gif)
+![](https://github.com/ChinaHackers/SinaWeibo/raw/master/preview.gif)
 
 
 ## 说明
