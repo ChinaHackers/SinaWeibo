@@ -14,7 +14,7 @@ class HomeTableViewController: BaseTableViewController {
     fileprivate lazy var titleBtn: TitleButton = TitleButton()
     
     
-    /// statusModel: 微博数据列表 视图模型对象
+    /// 微博数据列表视图模型对象
     fileprivate lazy var listViewModel = WBStatusListViewModel()
     
     // 注意:在闭包中如果使用当前对象的属性或者调用方法,也需要加self
@@ -72,7 +72,7 @@ class HomeTableViewController: BaseTableViewController {
         
         
         
-        print("开始加载数据\(WBNetworkManager.shared)")
+//        print("开始加载数据\(WBNetworkManager.shared)")
         
     }
     

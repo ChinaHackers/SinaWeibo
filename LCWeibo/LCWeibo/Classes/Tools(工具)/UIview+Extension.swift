@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 // MARK:- 定义全局常量
 
@@ -20,3 +21,4 @@ let refresh_FooterViewHeight: CGFloat = 60  // 底部加载更多视图高度
 
 
 let colorLan = UIColor(hue:0.58, saturation:0.90, brightness:0.78, alpha:1.00)  //全局颜色: 蓝色
+

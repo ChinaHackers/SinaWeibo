@@ -21,6 +21,22 @@ enum HTTPMethod {
 class WBNetworkManager: AFHTTPSessionManager {
 
     
+    // FIXME: 完善
+    
+    
+    
+    
+    
+    
+    /// 用户登录标记[计算型属性]
+    var userLogon: Bool {
+        //return userAccount.access_token != nil
+        
+        return true
+    }
+    
+    
+    
     /// 单例
     ///
     /// 静态/常量/闭包/
@@ -49,6 +65,7 @@ class WBNetworkManager: AFHTTPSessionManager {
         // 0>.判断 ToKen 是否为nil, 如果为nil, 直接返回
         guard let token = accessToken else {
         
+            // FIXME: 发送通知，提示用户再次登录
             print("没有 token 需要登录")
             completion(nil, false)
             

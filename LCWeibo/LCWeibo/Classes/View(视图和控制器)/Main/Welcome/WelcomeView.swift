@@ -1,5 +1,5 @@
 //
-//  WelcomeViewController.swift
+//  WelcomeView.swift
 //  LCWeibo
 //
 //  Created by Liu Chuan on 2017/3/9.
@@ -9,20 +9,52 @@
 import UIKit
 import Kingfisher
 
-class WelcomeViewController: UIViewController {
+class WelcomeView: UIView {
 
-    // MARK:- 拖线的属性
-    @IBOutlet weak var iconViewBottomCons: NSLayoutConstraint!
+    // MARK: - 控件属性
     @IBOutlet weak var iconView: UIImageView!
+    @IBOutlet weak var tipLabel: UILabel!
+    @IBOutlet weak var iconViewBottomCons: NSLayoutConstraint!
     
+    
+    /// 提供一个类函数, 加载WelcomeView
+    class func welcomeView() -> WelcomeView {
         
-    // MARK:- 系统回调函数
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        let nib = UINib(nibName: "WelcomeView", bundle: nil)
         
-        // 设置头像
+        let v = nib.instantiate(withOwner: nil, options: nil)[0] as! WelcomeView
+        
+        // 从 XIB 加载的视图，默认是 600 * 600 的
+        v.frame = UIScreen.main.bounds
+        
+        return v
+    }
+    
+    
+    
+    /// 从 XIB 加载完成调用
+    override func awakeFromNib() {
+        
+        //设置头像
 //        let profileURLString = UserAccountViewModel.shareIntance.account?.avatar_large
+        // 1. url
+//        guard let urlString = WBNetworkManager.shared.userAccount.avatar_large,
+//            let url = URL(string: urlString) else {
+//                return
+//        }
         
+        
+    }
+    
+    
+    
+}
+
+
+
+ /*
+ 
+ 
         // ?? : 如果??前面的可选类型有值,那么将前面的可选类型进行解包并且赋值
         // 如果??前面的可选类型为nil,那么直接使用??后面的值
         
@@ -49,3 +81,4 @@ class WelcomeViewController: UIViewController {
         }
     }
 }
+*/

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6B2A5A531E6A9B8700C5932A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B2A5A521E6A9B8700C5932A /* Assets.xcassets */; };
+		6B4A89CA1F9CEC1B00DAAAD4 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A89C81F9CEC1B00DAAAD4 /* WelcomeView.swift */; };
+		6B4A89CB1F9CEC1B00DAAAD4 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4A89C91F9CEC1B00DAAAD4 /* WelcomeView.xib */; };
+		6B4A89CD1F9CECCB00DAAAD4 /* NSString+LCPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A89CC1F9CECCB00DAAAD4 /* NSString+LCPath.swift */; };
 		6B8FF3B61E8EA64B002BDCA1 /* WBNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8FF3801E8EA64B002BDCA1 /* WBNetworkManager+Extension.swift */; };
 		6B8FF3B71E8EA64B002BDCA1 /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8FF3811E8EA64B002BDCA1 /* WBNetworkManager.swift */; };
 		6B8FF3B81E8EA64B002BDCA1 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8FF3821E8EA64B002BDCA1 /* TitleButton.swift */; };
@@ -34,8 +37,6 @@
 		6B8FF3CD1E8EA64B002BDCA1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8FF3A31E8EA64B002BDCA1 /* TabBarController.swift */; };
 		6B8FF3CE1E8EA64B002BDCA1 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8FF3A41E8EA64B002BDCA1 /* VisitorView.swift */; };
 		6B8FF3CF1E8EA64B002BDCA1 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8FF3A51E8EA64B002BDCA1 /* VisitorView.xib */; };
-		6B8FF3D01E8EA64B002BDCA1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8FF3A71E8EA64B002BDCA1 /* WelcomeViewController.swift */; };
-		6B8FF3D11E8EA64B002BDCA1 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8FF3A81E8EA64B002BDCA1 /* WelcomeViewController.xib */; };
 		6B8FF3D21E8EA64B002BDCA1 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8FF3AB1E8EA64B002BDCA1 /* Message.storyboard */; };
 		6B8FF3D31E8EA64B002BDCA1 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8FF3AC1E8EA64B002BDCA1 /* MessageTableViewController.swift */; };
 		6B8FF3D41E8EA64B002BDCA1 /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8FF3B11E8EA64B002BDCA1 /* Mine.storyboard */; };
@@ -52,6 +53,9 @@
 		6B2A5A481E6A9B8700C5932A /* LCWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B2A5A521E6A9B8700C5932A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B2A5A571E6A9B8800C5932A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B4A89C81F9CEC1B00DAAAD4 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		6B4A89C91F9CEC1B00DAAAD4 /* WelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
+		6B4A89CC1F9CECCB00DAAAD4 /* NSString+LCPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+LCPath.swift"; sourceTree = "<group>"; };
 		6B8FF3801E8EA64B002BDCA1 /* WBNetworkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WBNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		6B8FF3811E8EA64B002BDCA1 /* WBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		6B8FF3821E8EA64B002BDCA1 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
@@ -78,8 +82,6 @@
 		6B8FF3A31E8EA64B002BDCA1 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		6B8FF3A41E8EA64B002BDCA1 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		6B8FF3A51E8EA64B002BDCA1 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
-		6B8FF3A71E8EA64B002BDCA1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		6B8FF3A81E8EA64B002BDCA1 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		6B8FF3AB1E8EA64B002BDCA1 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		6B8FF3AC1E8EA64B002BDCA1 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		6B8FF3B11E8EA64B002BDCA1 /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				6B8FF3821E8EA64B002BDCA1 /* TitleButton.swift */,
 				6B8FF3831E8EA64B002BDCA1 /* UIBarButtonItem+Extension.swift */,
 				6B8FF3841E8EA64B002BDCA1 /* UIview+Extension.swift */,
+				6B4A89CC1F9CECCB00DAAAD4 /* NSString+LCPath.swift */,
 			);
 			path = "Tools(工具)";
 			sourceTree = "<group>";
@@ -292,8 +295,8 @@
 		6B8FF3A61E8EA64B002BDCA1 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
-				6B8FF3A71E8EA64B002BDCA1 /* WelcomeViewController.swift */,
-				6B8FF3A81E8EA64B002BDCA1 /* WelcomeViewController.xib */,
+				6B4A89C81F9CEC1B00DAAAD4 /* WelcomeView.swift */,
+				6B4A89C91F9CEC1B00DAAAD4 /* WelcomeView.xib */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -452,11 +455,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B8FF3BD1E8EA64B002BDCA1 /* Home.storyboard in Resources */,
+				6B4A89CB1F9CEC1B00DAAAD4 /* WelcomeView.xib in Resources */,
 				6B8FF3CF1E8EA64B002BDCA1 /* VisitorView.xib in Resources */,
 				6B8FF3C61E8EA64B002BDCA1 /* Compose.storyboard in Resources */,
 				6B8FF3C81E8EA64B002BDCA1 /* ComposeTypeButton.xib in Resources */,
 				6B2A5A531E6A9B8700C5932A /* Assets.xcassets in Resources */,
-				6B8FF3D11E8EA64B002BDCA1 /* WelcomeViewController.xib in Resources */,
 				6B8FF3BB1E8EA64B002BDCA1 /* Discover.storyboard in Resources */,
 				6B8FF3C21E8EA64B002BDCA1 /* PopoverViewController.storyboard in Resources */,
 				6B8FF3CB1E8EA64B002BDCA1 /* Main.storyboard in Resources */,
@@ -477,9 +480,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LCWeibo/Pods-LCWeibo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -492,13 +506,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LCWeibo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3B5301CDAEE32F31CE920F2A /* [CP] Copy Pods Resources */ = {
@@ -525,6 +542,7 @@
 			files = (
 				6B8FF3D51E8EA64B002BDCA1 /* MineTableViewController.swift in Sources */,
 				6B8FF3C41E8EA64B002BDCA1 /* AppDelegate.swift in Sources */,
+				6B4A89CD1F9CECCB00DAAAD4 /* NSString+LCPath.swift in Sources */,
 				6B8FF3CD1E8EA64B002BDCA1 /* TabBarController.swift in Sources */,
 				6BC3AF971E9025DC00F1CC9E /* WBStatusListViewModel.swift in Sources */,
 				6B8FF3C71E8EA64B002BDCA1 /* ComposeTypeButton.swift in Sources */,
@@ -533,9 +551,9 @@
 				6B8FF3B61E8EA64B002BDCA1 /* WBNetworkManager+Extension.swift in Sources */,
 				6B8FF3C31E8EA64B002BDCA1 /* PopoverViewController.swift in Sources */,
 				6B8FF3C01E8EA64B002BDCA1 /* QRCodeViewController.swift in Sources */,
+				6B4A89CA1F9CEC1B00DAAAD4 /* WelcomeView.swift in Sources */,
 				6BC3AF951E90231500F1CC9E /* WBStatusModel.swift in Sources */,
 				6B8FF3B81E8EA64B002BDCA1 /* TitleButton.swift in Sources */,
-				6B8FF3D01E8EA64B002BDCA1 /* WelcomeViewController.swift in Sources */,
 				6B8FF3C51E8EA64B002BDCA1 /* BaseTableViewController.swift in Sources */,
 				6B8FF3BA1E8EA64B002BDCA1 /* UIview+Extension.swift in Sources */,
 				6B8FF3BE1E8EA64B002BDCA1 /* HomeTableViewController.swift in Sources */,
