@@ -37,11 +37,10 @@ class VisitorView: UIView {
         return iv
     }()
     
-    
     /// 消息文字
     fileprivate lazy var messageLabel: UILabel = {
         let label = UILabel()
-        label.text = "关注一些人，回这里看看有什么惊喜"
+        label.text = "你还没有关注的人. 关注自己感兴趣的人,可在这里看到他们发布的内容"
         label.textColor = UIColor.lightGray
         label.font = UIFont.systemFont(ofSize: 13)
         label.textAlignment = NSTextAlignment.center
@@ -53,8 +52,10 @@ class VisitorView: UIView {
     fileprivate lazy var registerButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("注册", for: .normal)
-        btn.setBackgroundImage(UIImage(named: "common_button_white_disable"), for: .normal)
+        btn.setBackgroundImage(UIImage(named: "common_button_alpha"), for: .normal)
+        btn.setBackgroundImage(UIImage(named: "common_button_alpha_highlighted"), for: .highlighted)
         btn.setTitleColor(UIColor.orange, for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         return btn
     }()
     
@@ -62,24 +63,24 @@ class VisitorView: UIView {
     fileprivate lazy var loginButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("登录", for: .normal)
-        btn.setBackgroundImage(UIImage(named: "common_button_white_disable"), for: .normal)
-        btn.setTitleColor(UIColor.orange, for: .normal)
+        btn.setBackgroundImage(UIImage(named: "common_button_alpha"), for: .normal)
+        btn.setBackgroundImage(UIImage(named: "common_button_alpha_highlighted"), for: .highlighted)
+        btn.setTitleColor(UIColor.gray, for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         return btn
     }()
-    
     
     /// 关注按钮
     fileprivate lazy var attentionBtn: UIButton =  {
         let btn = UIButton()
-        btn.setTitle("去关注", for: .normal)
+        btn.setTitle("找感兴趣的人", for: .normal)
         btn.setBackgroundImage(UIImage(named: "common_button_alpha"), for: .normal)
         btn.setBackgroundImage(UIImage(named: "common_button_alpha_highlighted"), for: .highlighted)
         btn.setTitleColor(UIColor.orange, for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         btn.layer.cornerRadius = 5
         return btn
     }()
-    
-    
     
     // MARK: - 自定义方法(公开)
     
@@ -120,7 +121,6 @@ class VisitorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
 }
 
 
@@ -140,8 +140,8 @@ extension VisitorView {
         addSubview(houseIconView)
         addSubview(messageLabel)
         addSubview(attentionBtn)
-        //addSubview(registerButton)
-        //addSubview(loginButton)
+        addSubview(registerButton)
+        addSubview(loginButton)
         
         // 自动布局
         Automatic_Layout()
@@ -197,42 +197,30 @@ extension VisitorView {
         attentionBtn.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(messageLabel.snp.bottom).offset(32.0)
-            make.width.equalTo(120.0)
+            make.width.equalTo(160.0)
             make.height.equalTo(32.0)
         }
         
-        /*
+        
          // 注册按钮
          registerButton.snp.makeConstraints { (make) in
-         
-         make.width.equalTo(73)
-         make.height.equalTo(32)
-         // 左对齐
-         make.left.equalTo(messageLabel.snp.left)
-         
-         // 顶部到底部的间距
-         make.top.equalTo(iconView.snp.bottom).offset(132.0)
-         
-         // 顶部对齐
-         make.top.equalTo(loginButton.snp.top)
-         
+             make.width.equalTo(95)
+             make.height.equalTo(40)
+             make.left.equalTo(messageLabel.snp.left)            // 左对齐
+             make.top.equalTo(iconView.snp.bottom).offset(132.0) // 顶部到底部的间距
+             make.top.equalTo(loginButton.snp.top)               // 顶部对齐
          }
          
          
          // 登录按钮
          loginButton.snp.makeConstraints { (make) in
-         
-         make.width.equalTo(73)
-         make.height.equalTo(32)
-         // 右对对齐
-         make.right.equalTo(messageLabel.snp.right)
-         
-         // 顶部对齐
-         make.top.equalTo(registerButton.snp.top)
-         
+            make.width.equalTo(registerButton)
+            make.height.equalTo(registerButton)
+            make.right.equalTo(messageLabel.snp.right)          // 右对齐
+            make.top.equalTo(registerButton.snp.top)            // 顶部对齐
          }
          
-         */
+        
         
     }
     

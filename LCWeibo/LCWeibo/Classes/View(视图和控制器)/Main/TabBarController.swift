@@ -31,14 +31,22 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // 配置UI界面
+        
+        
+        // 测试微博的未读数量
+        WBNetworkManager.shared.unreadCount { (count) in
+            print("有\(count)条新数据!!!!!!!!")
+        }
+        
         configUI()
         
-        // 启动界面动画
         launchAnimation()
         
         // 设置新特性视图
         //setupNewfeatureViews()
+        
+        
+        delegate = self
         
     }
     
@@ -55,18 +63,17 @@ class TabBarController: UITabBarController {
         landscape  : 横屏, 风景画
     
         - 使用代码控制设备的方向. 优点: 可以在需要的时候, 单独处理
-        - 设置设备支持方向后,当前控制器 以及 字控制器 都会遵守设置的方向
+        - 设置设备支持方向后,当前控制器 以及 子控制器 都会遵守设置的方向
         - 如果播放视频, 通常是通过 modal 展现的!
      */
     
     // MARK: - 设备的支持方向
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        
         return .portrait
     }
     
     
-    // MARK: - 启动界面动画
+    /// 启动界面动画
     private func launchAnimation() {
         
         //获取启动视图
@@ -95,7 +102,7 @@ class TabBarController: UITabBarController {
     }
     
     
-    // MARK: - 配置UI界面
+    /// 配置UI界面
     private func configUI() {
 
         
@@ -185,6 +192,74 @@ extension TabBarController {
     }
     
 }
+
+
+// MARK: - UITabBarControllerDelegate
+extension TabBarController: UITabBarControllerDelegate {
+    
+    /// 将要选择 TabBarItem 时,调用
+    /// 可以和当前选中的tab进行比较
+    /// - Parameters:
+    ///   - tabBarController: tabBarController
+    ///   - viewController: 目标控制器
+    /// - Returns: 是否切换到目标控制器
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
+        // 1> 获取控制器在数组中的索引
+        let index = (childViewControllers as NSArray).index(of: viewController)
+        
+        // 2> 判断当前索引是首页否, 并且 index 也处于首页, 重复点击首页按钮
+        if selectedIndex == 0 && index == selectedIndex {
+            print("重复点击首页......")
+            
+            // 3> 让表格滚动到顶部
+            // 3.1> 获取控制器
+            let nav = childViewControllers[0] as! UINavigationController
+            let vc = nav.childViewControllers[0] as! HomeTableViewController
+            
+            // 3.2> 滚动到顶部
+            vc.tableView.setContentOffset(CGPoint(x: 0, y: -(navigationH + statusH)), animated: true)
+            
+            // 4> 刷新数据
+            
+        }
+        // 判断 目标控制器 是否 是 UIViewController
+        return !viewController.isMember(of: UIViewController.self)
+        
+        
+    }
+    
+    // 选择完成, 切换完成
+//    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+//        <#code#>
+//    }
+//    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

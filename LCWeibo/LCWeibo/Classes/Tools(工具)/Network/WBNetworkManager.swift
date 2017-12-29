@@ -50,6 +50,8 @@ class WBNetworkManager: AFHTTPSessionManager {
     // 为了用户的安全, token 时限: 默认用户 三天
     var accessToken: String? = "2.00EJsY7GYwvbnBd88e302956Vt8b7E"
     
+    var uid: String? = "1649214170"
+    
     /// 负责拼接 Token 的网络请求方法
     ///
     /// - Parameters:

@@ -34,7 +34,7 @@ class HomeTableViewController: BaseTableViewController {
     
         // 如果没有登录, 就设置游客界面的信息
         if !userLogin {
-            visitorView?.setupVisitorView(isHome: true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
+            visitorView?.setupVisitorView(isHome: true, imageName: "visitordiscover_feed_image_house", message: "你还没有关注的人. 关注自己感兴趣的人,可在这里看到他们发布的内容")
             return
         }
 
@@ -177,20 +177,18 @@ extension HomeTableViewController {
 extension HomeTableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return listViewModel.statusList.count
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
+        // 取出cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
+        // 设置cell
         cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
-        
-//        cell.imageView?.image = UIImage(named: listViewModel.statusList[indexPath.row].bmiddle_pic)
+        cell.imageView?.image = UIImage(named: listViewModel.statusList[indexPath.row].bmiddle_pic)
     
+        // 返回cell
         return cell
     }
     

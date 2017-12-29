@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16G1114" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,8 +24,8 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_house" translatesAutoresizingMaskIntoConstraints="NO" id="83I-9s-GvM">
                     <rect key="frame" x="140" y="208" width="94" height="90"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关注一些人，回这里看看有什么惊喜" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olv-EU-Y2c">
-                    <rect key="frame" x="78" y="401" width="220" height="33.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你还没有关注的人. 关注自己感兴趣的人,可在这里看到他们发布的内容" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olv-EU-Y2c">
+                    <rect key="frame" x="78" y="401" width="220" height="50.5"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="220" id="smb-il-9V0"/>
                     </constraints>
@@ -34,9 +34,9 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNx-ev-Qr0">
-                    <rect key="frame" x="78" y="473" width="73" height="35"/>
+                    <rect key="frame" x="78" y="473" width="90" height="35"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="73" id="L2V-y1-9jO"/>
+                        <constraint firstAttribute="width" constant="90" id="L2V-y1-9jO"/>
                         <constraint firstAttribute="height" constant="35" id="zZi-bB-0Es"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -45,10 +45,10 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEN-nw-PeN">
-                    <rect key="frame" x="225" y="473" width="73" height="35"/>
+                    <rect key="frame" x="208" y="473" width="90" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="E7H-XO-lke"/>
-                        <constraint firstAttribute="width" constant="73" id="TA1-g2-fEk"/>
+                        <constraint firstAttribute="width" constant="90" id="TA1-g2-fEk"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="登录" backgroundImage="common_button_alpha">

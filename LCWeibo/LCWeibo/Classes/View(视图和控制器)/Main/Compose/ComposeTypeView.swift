@@ -25,25 +25,9 @@ class ComposeTypeView: UIView {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var closeBtn: UIButton!
     
-    /*
-     /// 按钮数据数组
-     private let buttonsInfo = [["imageName": "tabbar_compose_idea_neo", "title": "文字", "clsName": "WBComposeViewController"],
-     ["imageName": "tabbar_compose_camera", "title": "拍摄"],
-     ["imageName": "tabbar_compose_weibo", "title": "相册"],
-     ["imageName": "tabbar_compose_lbs", "title": "直播"],
-     ["imageName": "tabbar_compose_review", "title": "光影秀"],
-     ["imageName": "tabbar_compose_more", "title": "头条文章", "actionName": "clickMore"],
-     ["imageName": "tabbar_compose_friend", "title": "好友圈"],
-     ["imageName": "tabbar_compose_wbcamera", "title": "微博相机"],
-     ["imageName": "tabbar_compose_music", "title": "音乐"],
-     ["imageName": "tabbar_compose_shooting", "title": "拍摄"]
-     ]
-     
-     */
-    
     /// 按钮数据数组
     fileprivate let buttonsInfo = [["imageName": "tabbar_compose_idea_neo", "title": "文字"],
-                               ["imageName": "tabbar_compose_camera", "title": "拍摄"],
+                               ["imageName": "tabbar_compose_capture_neo", "title": "拍摄"],
                                ["imageName": "tabbar_compose_picture_neo", "title": "相册"],
                                ["imageName": "tabbar_compose_live_neo", "title": "直播"],
                                ["imageName": "tabbar_compose_slideshow_neo", "title": "光影秀"],
@@ -51,7 +35,7 @@ class ComposeTypeView: UIView {
                                ["imageName": "tabbar_compose_location_neo", "title": "签到"],
                                ["imageName": "tabbar_compose_comment_neo", "title": "点评"],
                                ["imageName": "tabbar_compose_topic_neo", "title": "话题"],
-                               ["imageName": "tabbar_compose_envelope", "title": "红包"],
+                               ["imageName": "tabbar_compose_redpacket_neo", "title": "红包"],
                                ["imageName": "tabbar_compose_friends_neo", "title": "好友圈"],
                                ["imageName": "tabbar_compose_music_neo", "title": "音乐"],
                                ["imageName": "tabbar_compose_shopping_neo", "title": "商品"],

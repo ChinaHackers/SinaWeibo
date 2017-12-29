@@ -48,4 +48,30 @@ extension WBNetworkManager {
             completion(result , isSuccess)
         }
     }
+    
+    
+    /// 返回微博未读数量
+    func unreadCount(completion: @escaping (_ count: Int) -> ()) {
+        
+        guard let uid = uid else { return }
+        
+        let urlString = "https://rm.api.weibo.com/2/remind/unread_count.json"
+        
+        let parm = ["uid": uid]
+        
+        
+        ToKenRequest(URLString: urlString, parameters: parm) { (json, isSuccess) in
+            
+            let dict = json as! [String: AnyObject]
+            
+            let count = dict["status"] as? Int
+            
+            // print(json ?? "")
+            
+            completion(count ?? 0)
+        }
+        
+    }
+    
+    
 }
