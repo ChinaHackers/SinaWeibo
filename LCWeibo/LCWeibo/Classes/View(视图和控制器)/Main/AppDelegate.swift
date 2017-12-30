@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,16 +17,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
       
-        // MARK: 设置导航栏\工具栏的外观颜色
-        /// 外观设置, 全局有效
+        // MARK: 设置导航栏\工具栏的外观颜色, 外观设置, 全局有效
         UINavigationBar.appearance().tintColor = UIColor.orange
         UITabBar.appearance().tintColor = UIColor.black
         
-        // MARK: 设置TabBar 选中\未选中状态下的文字颜色
+        // MARK: 设置TabBar选中\未选中状态下的文字颜色
         // 只改变文字颜色
         // UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.gray], for:.normal)
-        
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.black], for:.selected)
+        
+        
+        // MARK: 取得用户授权显示通知[状态栏信息的提示条/声音/BadgeNumber]
+        // #available: 检测设备版本
+        if #available(iOS 10.0, *) {  // 如果是10.0以上
+            
+            let center = UNUserNotificationCenter.current()
+            
+            center.requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { (success, error) in
+                
+                print("授权" + (success ? "成功" : "失败"))
+            })
+        }else { // 10.0以下
+            
+            let notifySettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(notifySettings)
+        }
+        
+        
+        
+        
+        
+        
         
         
         return true

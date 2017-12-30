@@ -11,6 +11,9 @@ import UIKit
 class TabBarController: UITabBarController {
     
     
+    /// 定时器
+    fileprivate var timer: Timer?
+    
     // MARK: - 懒加载属性
     /// 撰写按钮( +号按钮 )
     private lazy var composeBtn: UIButton = {
@@ -31,16 +34,11 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
-        // 测试微博的未读数量
-        WBNetworkManager.shared.unreadCount { (count) in
-            print("有\(count)条新数据!!!!!!!!")
-        }
-        
         configUI()
         
         launchAnimation()
+        
+        setupTimer()
         
         // 设置新特性视图
         //setupNewfeatureViews()
@@ -48,6 +46,12 @@ class TabBarController: UITabBarController {
         
         delegate = self
         
+    }
+    
+    // MARK: - 销毁时钟
+    deinit {
+        // 销毁时钟
+        timer?.invalidate()
     }
     
     // MARK: 视图即将可见时调用。默认情况下不执行任何操作
@@ -140,6 +144,35 @@ class TabBarController: UITabBarController {
 
     }
     
+}
+
+// MARK: - 定时器相关方法
+extension TabBarController {
+    
+    /// 配置时钟
+    fileprivate func setupTimer() {
+        
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(updateTimer) , userInfo: nil, repeats: true)
+    }
+    
+    
+    /// 时钟触发方法
+    @objc fileprivate func updateTimer() {
+        
+        // 发起网络请求, 测试微博的未读数量
+        WBNetworkManager.shared.unreadCount { (count) in
+            
+            print("监测到 \(count) 条新微博")
+            
+            
+            // 设置首页 tabBarItem 的 badgeNumber
+            self.tabBar.items?[0].badgeValue =  count > 0 ? "\(count)" : nil
+            
+            // 设置 App 的 badgeNumber, 从iOS8.0之后,需要用户授权后,才能显示
+            UIApplication.shared.applicationIconBadgeNumber = count
+            
+        }
+    }
 }
 
 // MARK: - 新特性视图处理
@@ -237,30 +270,3 @@ extension TabBarController: UITabBarControllerDelegate {
     
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
