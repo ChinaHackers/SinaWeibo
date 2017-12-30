@@ -15,7 +15,10 @@ class ComposeTypeButton: UIControl {
     /// 控件属性
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-
+    
+    /// 点击按钮要展现控制器的类名
+    var className: String?
+    
     
     /// 使用图像名称/标题创建按钮, 使用 XIB 布局\加载 按钮.
     ///

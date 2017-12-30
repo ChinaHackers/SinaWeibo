@@ -26,7 +26,7 @@ class ComposeTypeView: UIView {
     @IBOutlet weak var closeBtn: UIButton!
     
     /// 按钮数据数组
-    fileprivate let buttonsInfo = [["imageName": "tabbar_compose_idea_neo", "title": "文字"],
+    fileprivate let buttonsInfo = [["imageName": "tabbar_compose_idea_neo", "title": "文字", "className": "WBComposeViewController"],
                                ["imageName": "tabbar_compose_capture_neo", "title": "拍摄"],
                                ["imageName": "tabbar_compose_picture_neo", "title": "相册"],
                                ["imageName": "tabbar_compose_live_neo", "title": "直播"],
@@ -44,7 +44,7 @@ class ComposeTypeView: UIView {
 
     
     
-    
+    // MARK: - 方法
     /// 通过XIB加载视图
     class func load_composeTypeView() -> ComposeTypeView {
         
@@ -74,11 +74,57 @@ class ComposeTypeView: UIView {
         
     }
 
+    // MARK: - 监听方法
     
-    /// 按钮点击事件
-    func btnclicked() {
+    /// 按钮点击事件, 点击做出动画效果
+    @objc fileprivate func btnclicked(button: ComposeTypeButton) {
         
-        print("点击了......")
+        print("点击了.....\(button).")
+        
+        // 1. 判断当前显示的视图
+        let pageIndex = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+        let v = scrollView.subviews[pageIndex]
+        
+        // 2. 遍历当前视图
+        // * 选中按钮   - 放大
+        // * 未选中按钮  - 缩小
+        
+        for (i, btn) in v.subviews.enumerated() {
+            
+            // 1> 缩放动画: kPOPViewScaleXY
+            let scaleAnimation: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewScaleXY)
+            
+            /* x, y 在iOS系统中使用 CGPoint 表示, 如果要转换成 id, 需要使用 'NSValue' 包装 */
+            
+            /// 缩放比例
+            let scale = (button == btn) ? 2 : 0.2
+            
+            scaleAnimation.toValue = NSValue(cgPoint: CGPoint(x: scale, y: scale))
+            scaleAnimation.duration = 0.5
+            
+            btn.pop_add(scaleAnimation, forKey: nil)
+            
+            
+            // 2> 渐变动画 - 动画组
+            let alphaAnimation: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+            
+            alphaAnimation.toValue = 0.2
+            alphaAnimation.duration = 0.5
+            
+            btn.pop_add(alphaAnimation, forKey: nil)
+            
+            // 3> 添加动画监听
+            if i == 0 {
+                alphaAnimation.completionBlock = { _, _ in
+                    print("完成回调, 展现控制器!")
+                }
+            }
+            
+        }
+
+        
+        
+        
     }
     
     /// 关闭按钮
@@ -98,11 +144,11 @@ class ComposeTypeView: UIView {
 // MARK: - 动画方法扩展
 extension ComposeTypeView {
     
-    // MARK: - 消除动画
+    // MARK: 消除动画
     /// 隐藏按钮动画
     fileprivate func hideButtons() {
 
-        // 1.根据滚动视图的contentOffset,判断当前是显示的子视图
+        // 1.根据滚动视图的contentOffset,判断当前显示的子视图
         let pageIndex = Int(scrollView.contentOffset.x / scrollView.bounds.width)
         let vi = scrollView.subviews[pageIndex]
         
@@ -115,7 +161,6 @@ extension ComposeTypeView {
             // 2>.设置动画相关的属性
             // fromValue: 动画当前值
             // toValue: 动画目标值
-            
             animation.fromValue = button.center.y
             animation.toValue = button.center.y + 400
             
@@ -130,7 +175,7 @@ extension ComposeTypeView {
                 animation.completionBlock = { _, _ in
                      self.hideCurrentView()      // 隐藏当前视图
                 }
-                
+                    
             }
             
         }
@@ -154,19 +199,19 @@ extension ComposeTypeView {
         
         // 3> 添加完成监听方法
         anim.completionBlock = { _, _ in
-            self.removeFromSuperview()      // 关闭视图
+            self.removeFromSuperview()      // 删除视图
         }
 
     }
     
-    // MARK: - 显示部分动画
+    // MARK: 显示动画
     /// 动画显示当前视图
     fileprivate func showCurrentView() {
       
         // 1.创建动画, 通过kPOPViewAlpha创建UIview动画
         let anima: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
         
-        /// 设置动画相关属性
+        // 设置动画相关属性
         // fromValue: 动画当前值
         // toValue: 动画目标值
         anima.fromValue = 0          // 改变视图的透明度: 0 ~ 1
@@ -181,7 +226,7 @@ extension ComposeTypeView {
         
     }
     
-    // MARK: - 旋转关闭按钮
+    // MARK: 旋转关闭按钮
     /// 旋转关闭按钮
     @objc fileprivate func rotateCloseBtn(close: UIButton) {
         
@@ -213,7 +258,6 @@ extension ComposeTypeView {
         let vi = scrollView.subviews[0]
         
         // 2>.遍历 vi视图中所有的按钮
-        
         for (i, btn) in vi.subviews.enumerated() {
             
             // MARK: - POP动画 - 具体实现
@@ -222,8 +266,8 @@ extension ComposeTypeView {
             let animation: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
             
             // 2>.设置动画属性
-            animation.fromValue = btn.center.y + 400    // 按钮往下
-            animation.toValue = btn.center.y            // 按钮往上
+            animation.fromValue = btn.center.y + 400    // 首先设置按钮位于下方
+            animation.toValue = btn.center.y            // 往上弹出
             
             // 设置弹力系数
             // 默认值: 4 取值范围 0 ~ 20, 数值越大,弹性越大.
@@ -279,14 +323,14 @@ private extension ComposeTypeView {
         //scrollView.isScrollEnabled = false          // 禁用滚动
         
         // 创建手势
-        let top = UITapGestureRecognizer(target: self, action: #selector(BtnSuperViewGesture))
+//        let top = UITapGestureRecognizer(target: self, action: #selector(BtnSuperViewGesture))
         
         // 给scrollView的 父视图添加手势
-        scrollView.superview?.addGestureRecognizer(top)
+//        scrollView.superview?.addGestureRecognizer(top)
         
     }
     
-    // MARK: - 关闭按钮父视图 手势点击时间
+    /// 关闭按钮父视图 手势点击事件
     @objc private func BtnSuperViewGesture() {
         
         // 旋转关闭按钮
@@ -315,10 +359,15 @@ private extension ComposeTypeView {
             
             // 1>. 创建撰写按钮
             let btn = ComposeTypeButton.composeTypeButton(imageName: imageName, title: title)
-            btn.addTarget(self, action: #selector(btnclicked), for: .touchUpInside)
+            btn.addTarget(self, action: #selector(btnclicked(button:)), for: .touchUpInside)
             
             // 2>. 添加按钮到视图中
             view.addSubview(btn)
+            
+            
+            // 4>. 设置要展现的类名
+            btn.className = dict["className"]
+            
             
         }
         // 2. 遍历视图的子视图，布局按钮
