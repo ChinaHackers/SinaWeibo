@@ -46,6 +46,7 @@
 		6BBCCD2D1FF7F78E00D7D9D6 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBCCD231FF7F78E00D7D9D6 /* VisitorView.swift */; };
 		6BBCCD2E1FF7F78E00D7D9D6 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BBCCD241FF7F78E00D7D9D6 /* VisitorView.xib */; };
 		6BBCCD301FF7F89A00D7D9D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBCCD2F1FF7F89A00D7D9D6 /* AppDelegate.swift */; };
+		6BBCCD331FF8090000D7D9D6 /* WBComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBCCD321FF8090000D7D9D6 /* WBComposeTextView.swift */; };
 		6BC3AF951E90231500F1CC9E /* WBStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3AF941E90231500F1CC9E /* WBStatusModel.swift */; };
 		6BC3AF971E9025DC00F1CC9E /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3AF961E9025DC00F1CC9E /* WBStatusListViewModel.swift */; };
 		8189193932706B45694CFB54 /* Pods_LCWeibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50366CAAF15ED550727B4E61 /* Pods_LCWeibo.framework */; };
@@ -95,6 +96,7 @@
 		6BBCCD231FF7F78E00D7D9D6 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		6BBCCD241FF7F78E00D7D9D6 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 		6BBCCD2F1FF7F89A00D7D9D6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6BBCCD321FF8090000D7D9D6 /* WBComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeTextView.swift; sourceTree = "<group>"; };
 		6BC3AF941E90231500F1CC9E /* WBStatusModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusModel.swift; sourceTree = "<group>"; };
 		6BC3AF961E9025DC00F1CC9E /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
 		F1EDF3B89C73F992C4B8DC6B /* Pods-LCWeibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCWeibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCWeibo/Pods-LCWeibo.release.xcconfig"; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 		6BBCCCF01FF7F61000D7D9D6 /* Compose(撰写微博) */ = {
 			isa = PBXGroup;
 			children = (
+				6BBCCD311FF808D700D7D9D6 /* View */,
 				6BBCCCF11FF7F61000D7D9D6 /* ComposeType */,
 				6BBCCCF71FF7F61000D7D9D6 /* WBComposeViewController.swift */,
 				6BBCCCF81FF7F61000D7D9D6 /* WBComposeViewController.xib */,
@@ -421,6 +424,14 @@
 			);
 			name = "VisitorView(访客视图)";
 			path = VisitorView;
+			sourceTree = "<group>";
+		};
+		6BBCCD311FF808D700D7D9D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6BBCCD321FF8090000D7D9D6 /* WBComposeTextView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		890A5DB17855BD1F5CF86FB4 /* Frameworks */ = {
@@ -598,6 +609,7 @@
 				6B8FF3C31E8EA64B002BDCA1 /* PopoverViewController.swift in Sources */,
 				6BBCCD2D1FF7F78E00D7D9D6 /* VisitorView.swift in Sources */,
 				6BBCCD301FF7F89A00D7D9D6 /* AppDelegate.swift in Sources */,
+				6BBCCD331FF8090000D7D9D6 /* WBComposeTextView.swift in Sources */,
 				6B8FF3C01E8EA64B002BDCA1 /* QRCodeViewController.swift in Sources */,
 				6BC3AF951E90231500F1CC9E /* WBStatusModel.swift in Sources */,
 				6BBCCCEB1FF7DC4400D7D9D6 /* WBCommon.swift in Sources */,

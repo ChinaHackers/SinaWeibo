@@ -15,6 +15,7 @@
                 <outlet property="textView" destination="3QJ-Lr-ZKr" id="Icy-5v-lRk"/>
                 <outlet property="titleLabel" destination="sSN-5z-2aV" id="smd-gg-E63"/>
                 <outlet property="toolbar" destination="MB5-70-F2O" id="cj0-70-0Ie"/>
+                <outlet property="toolbarBottomCons" destination="cHi-WC-p9I" id="2Am-PN-WA1"/>
                 <outlet property="view" destination="7PE-XM-A1v" id="Y5S-5E-pTT"/>
             </connections>
         </placeholder>
@@ -23,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" text="分享新鲜事..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3QJ-Lr-ZKr">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3QJ-Lr-ZKr" customClass="WBComposeTextView" customModule="LCWeibo" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
