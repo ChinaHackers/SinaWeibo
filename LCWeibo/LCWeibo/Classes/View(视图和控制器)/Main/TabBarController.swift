@@ -203,16 +203,24 @@ extension TabBarController {
     /// 设置新特性视图
     fileprivate func setupNewfeatureViews() {
         
+  /*
+        var v = WelcomeView()
+        
         // 0. 判断是否登录
         if !WBNetworkManager.shared.userLogon {
             return
         }
+        if !isNewVersion {
+            
+            v = WelcomeView.loadWelcomeView()
+        }
         
         // 1. 如果更新，显示新特性，否则显示欢迎
-//        let v = isNewVersion ? WBNewFeatureView.newFeatureView() : WBWelcomeView.welcomeView()
+        let v = isNewVersion ? WBNewFeatureView.newFeatureView() : WBWelcomeView.welcomeView()
         
         // 2. 添加视图
-//        view.addSubview(v!)
+        view.addSubview(v)
+ */
     }
 
     
