@@ -122,7 +122,29 @@ class TabBarController: UITabBarController {
         let composeView = ComposeTypeView.load_composeTypeView()
         
         // 2.显示视图
-        composeView.show()
+        composeView.show { (clsName) in
+            
+//            print(clsName)
+            
+            // 展现撰写微博控制器
+            guard let clsName = clsName,
+                let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type else {
+            
+                composeView.removeFromSuperview()   // 移除视图
+                return
+            }
+            
+            let vc = cls.init()
+            let nav = UINavigationController(rootViewController: vc)
+            
+            // 让导航控制器强行更新约束 - 会直接更新所有子视图的约束！
+            /* 提示：开发中如果发现不希望的布局约束和动画混在一起，应该向前寻找，强制更新约束！*/
+            nav.view.layoutIfNeeded()
+            
+            self.present(nav, animated: true) { // motal展现控制器
+                composeView.removeFromSuperview()
+            }
+        }
     }
     
 

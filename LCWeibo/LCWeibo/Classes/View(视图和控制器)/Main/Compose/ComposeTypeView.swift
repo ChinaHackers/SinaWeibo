@@ -42,9 +42,10 @@ class ComposeTypeView: UIView {
                                ["imageName": "tabbar_compose_miaopai_neo", "title": "秒拍"]
         ]
 
+    /// 完成回调
+    private var completionBlock: ((_ clsName: String?) -> ())?
     
-    
-    // MARK: - 方法
+    // MARK: - 实例化方法
     /// 通过XIB加载视图
     class func load_composeTypeView() -> ComposeTypeView {
         
@@ -57,8 +58,11 @@ class ComposeTypeView: UIView {
     }
 
     /// 显示当前视图
-    func show(){
+    func show(completion: @escaping (_ clsName: String?) -> ()) {
 
+        // 记录闭包
+        completionBlock = completion
+        
         // 0>. 旋转关闭按钮
         rotateCloseBtn(close: closeBtn)
         
@@ -77,9 +81,9 @@ class ComposeTypeView: UIView {
     // MARK: - 监听方法
     
     /// 按钮点击事件, 点击做出动画效果
-    @objc fileprivate func btnclicked(button: ComposeTypeButton) {
+    @objc fileprivate func btnclicked(selectedButton: ComposeTypeButton) {
         
-        print("点击了.....\(button).")
+        print("点击了.....\(selectedButton).")
         
         // 1. 判断当前显示的视图
         let pageIndex = Int(scrollView.contentOffset.x / scrollView.bounds.width)
@@ -97,7 +101,7 @@ class ComposeTypeView: UIView {
             /* x, y 在iOS系统中使用 CGPoint 表示, 如果要转换成 id, 需要使用 'NSValue' 包装 */
             
             /// 缩放比例
-            let scale = (button == btn) ? 2 : 0.2
+            let scale = (selectedButton == btn) ? 2 : 0.2
             
             scaleAnimation.toValue = NSValue(cgPoint: CGPoint(x: scale, y: scale))
             scaleAnimation.duration = 0.5
@@ -117,6 +121,8 @@ class ComposeTypeView: UIView {
             if i == 0 {
                 alphaAnimation.completionBlock = { _, _ in
                     print("完成回调, 展现控制器!")
+                    // 执行完成闭包
+                    self.completionBlock?(selectedButton.className)
                 }
             }
             
@@ -359,7 +365,7 @@ private extension ComposeTypeView {
             
             // 1>. 创建撰写按钮
             let btn = ComposeTypeButton.composeTypeButton(imageName: imageName, title: title)
-            btn.addTarget(self, action: #selector(btnclicked(button:)), for: .touchUpInside)
+            btn.addTarget(self, action: #selector(btnclicked(selectedButton:)), for: .touchUpInside)
             
             // 2>. 添加按钮到视图中
             view.addSubview(btn)

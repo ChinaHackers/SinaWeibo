@@ -16,6 +16,14 @@ class WBComposeViewController: UIViewController {
 
         
         view.backgroundColor = .gray
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: .done, target: self, action: #selector(close))
+        
+        
+    }
+    
+    
+    @objc private func close() {
+        dismiss(animated: true, completion: nil)
     }
 
 }
